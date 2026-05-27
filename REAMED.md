@@ -7,3 +7,5 @@ Depois faremos isso com o Fabric
 Código
 
 Agora Fabric no Git, sucesso!
+
+Devops!
