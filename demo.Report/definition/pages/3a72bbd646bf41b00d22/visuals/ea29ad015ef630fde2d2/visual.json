@@ -2,18 +2,18 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "ea29ad015ef630fde2d2",
   "position": {
-    "x": 152.31611919797652,
+    "x": 308.74889026616864,
     "y": 128.98842526675489,
     "z": 0,
     "height": 444.59840198328283,
-    "width": 1127.9626124390693,
+    "width": 607.89225950183425,
     "tabOrder": 0
   },
   "visual": {
-    "visualType": "areaChart",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Category": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -27,31 +27,49 @@
                 }
               },
               "queryRef": "calendario.Data",
-              "nativeQueryRef": "Data",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
+              "nativeQueryRef": "Data"
+            },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "cotacoes"
-                        }
-                      },
-                      "Property": "Cotacao"
+                    "SourceRef": {
+                      "Entity": "transacoes"
                     }
                   },
-                  "Function": 1
+                  "Property": "Valor Total"
                 }
               },
-              "queryRef": "Avg(cotacoes.Cotacao)",
-              "nativeQueryRef": "Média de Cotacao"
+              "queryRef": "transacoes.Valor Total",
+              "nativeQueryRef": "Valor Total"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "transacoes"
+                    }
+                  },
+                  "Property": "Cotação corrigida"
+                }
+              },
+              "queryRef": "transacoes.Cotação corrigida",
+              "nativeQueryRef": "Cotação corrigida"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "transacoes"
+                    }
+                  },
+                  "Property": "Total R$"
+                }
+              },
+              "queryRef": "transacoes.Total R$",
+              "nativeQueryRef": "Total R$"
             }
           ]
         }
@@ -80,7 +98,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "ebc996f9ef553e917208",
+        "name": "3648a3ac941b5528f257",
         "field": {
           "Column": {
             "Expression": {
@@ -94,20 +112,43 @@
         "type": "Categorical"
       },
       {
-        "name": "b930df81773d563c0d7d",
+        "name": "94ccaba9db06fab24a12",
         "field": {
-          "Aggregation": {
+          "Measure": {
             "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "cotacoes"
-                  }
-                },
-                "Property": "Cotacao"
+              "SourceRef": {
+                "Entity": "transacoes"
               }
             },
-            "Function": 1
+            "Property": "Valor Total"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "02326b5ce5ea63d2a01a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "transacoes"
+              }
+            },
+            "Property": "Cotação corrigida"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ab6948e5a6835dc9e583",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "transacoes"
+              }
+            },
+            "Property": "Total R$"
           }
         },
         "type": "Advanced"
