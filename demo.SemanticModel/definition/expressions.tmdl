@@ -1,4 +1,4 @@
-expression base_transacoes = "C:\Users\danilo.kroll\Desktop\BI_Git\transacoes.xlsx" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+expression base_transacoes = "\\VPSRV17.adoro.com.br\Arquivos\TI\TABELAS\transacoes.xlsx" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: dd72a871-2d8e-443a-a267-1882e960268a
 	queryGroup: Pârametros
 
